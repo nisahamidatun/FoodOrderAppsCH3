@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/orderFoodHomeFragment">
+
+    <fragment
+        android:id="@+id/orderFoodHomeFragment"
+        android:name="com.learning.orderfoodappsch3.presentation.orderfoodlist.OrderFoodHomeFragment"
+        android:label="OrderFoodHomeFragment"
+        tools:layout="@layout/fragment_order_food_home">
+        <action
+            android:id="@+id/action_orderFoodHomeFragment_to_orderFoodDetailFragment"
+            app:destination="@id/orderFoodDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderFoodDetailFragment"
+        android:name="com.learning.orderfoodappsch3.presentation.orderfooddetail.OrderFoodDetailFragment"
+        android:label="OrderFoodDetailFragment"
+        tools:layout="@layout/fragment_order_food_detail">
+        <argument
+            android:name="orderFood"
+            app:argType="com.learning.orderfoodappsch3.model.OrderFood"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>
